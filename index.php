@@ -9,7 +9,12 @@
     require_once 'ISS.php'; 
     require_once 'ICCC.php'; 
     require_once "SemDesconto.php";
-    $reforma = new Orcamento(501); 
+    require_once "DescontoVendaCasada.php";
+    require_once "Item.php";
+
+    $reforma = new Orcamento(500); 
+    $reforma->adicionaItem(new Item("LAPIS", 50));
+    $reforma->adicionaItem(new Item("CANETA", 150));
     //Descontos
 
     echo "<br>";
@@ -17,10 +22,11 @@
     $Desconto5Itens = new Desconto5Itens();
     $Desconto500Reais = new Desconto500Reais();
     $SemDesconto = new SemDesconto();
+    $DescontoVendaCasada = new DescontoVendaCasada(); 
 
     $Desconto5Itens->setProximo($Desconto500Reais);
-    $Desconto500Reais->setProximo($SemDesconto);
+    $Desconto500Reais->setProximo($DescontoVendaCasada);
+    $DescontoVendaCasada->setProximo($SemDesconto);
 
-   	$desconto = $Desconto5Itens->desconto($reforma);
-   	echo $desconto;
+   	echo $Desconto5Itens->desconto($reforma);
 ?>
