@@ -1,7 +1,7 @@
 <?php 
 	class Orcamento{
 		private $valor;
-		private $itens = array(1,2,3,4);
+		private $itens = array();
 		function __construct($valor){
 			$this->valor = $valor;
 		}
