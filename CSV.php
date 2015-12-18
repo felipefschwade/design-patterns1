@@ -8,7 +8,7 @@
 				$this->proxima->responde($Req, $Conta);
 			}
 		}
-		public function setProxima(Resposta $resp){
+		function __construct($resp){
 			$this->proxima = $resp;
 		}
 	}

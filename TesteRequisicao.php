@@ -6,17 +6,12 @@
 	require_once 'CSV.php';
 	require_once 'XML.php';
 	require_once 'PORCENTO.php';
+	require_once 'SemFormato.php';
 
 	$Conta = new Conta("Felipe", 1500);
-	$Req = new Requisicao(3);
+	$Req = new Requisicao(1);
 
-	$XML = new XML();
-	$CSV = new CSV();
-	$PORCENTO = new PORCENTO();
-
-	$XML->setProxima($CSV);
-	$CSV->setProxima($PORCENTO);
-	$PORCENTO->setProxima($XML);
+	$XML = new XML(new CSV(new PORCENTO(new SemFormato(0))));
 
 	echo $XML->responde($Req, $Conta);
 ?>
