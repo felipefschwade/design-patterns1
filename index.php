@@ -1,18 +1,18 @@
 <?php 
 	require_once 'Orcamento.php';
 	require_once 'Imposto.php';
-	require_once 'CalculadorDeImposto.php'; 
+	require_once 'CalculadorDeImposto.php' ; 
 	require_once 'ICMS.php';
     require_once 'ISS.php'; 
     require_once 'ICCC.php'; 
     require_once "Item.php";
+    require_once 'TemplateImposto.php';
+    require_once 'ICPP.php';
+    require_once 'IKCV.php';
 
-    $reforma = new Orcamento(500); 
+    $reforma = new Orcamento(501); 
     $reforma->adicionaItem(new Item("LAPIS", 50));
-    $reforma->adicionaItem(new Item("CANETA", 150));
+    $reforma->adicionaItem(new Item("CANETA", 10));
     $CalculadorDeImposto = new CalculadorDeImposto;
-    echo $CalculadorDeImposto->calcula($reforma, new ICMS());
-    //Descontos
-
-    
+    echo $CalculadorDeImposto->calcula($reforma, new IKCV());
 ?>
