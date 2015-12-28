@@ -7,7 +7,7 @@
         public function RespostaEmPorcento() {
             $this->outraResposta = null;
         }
-         publicfunction responde(Requisicao $req, Conta $conta) {
+         public function responde(Requisicao $req, Conta $conta) {
             if($req->getFormato() == Formato::PORCENTO) {
                 echo $conta->getTitular() . '%' . $conta->getSaldo();
             } else if(!is_null($outraResposta)){
