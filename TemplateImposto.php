@@ -1,5 +1,5 @@
 <?php 
-	abstract class TemplateImposto implements Imposto{
+	abstract class TemplateImposto extends Imposto{
 		public function calcula(Orcamento $Orcamento){
 			if ($this->deveUsarMaximaTaxacao($Orcamento)){
 				return $this->maximaTaxacao($Orcamento);

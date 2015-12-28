@@ -1,5 +1,5 @@
 <?php
-	class CSV implements Resposta{
+	class CSV extends Resposta{
 		private $proxima;
 		public function responde(Requisicao $Req, Conta $Conta){
 			if ($Req->getFormato() == Formato::$CSV){

@@ -9,10 +9,11 @@
     require_once 'TemplateImposto.php';
     require_once 'ICPP.php';
     require_once 'IKCV.php';
+    require_once 'IHIT.php';
 
     $reforma = new Orcamento(501); 
     $reforma->adicionaItem(new Item("LAPIS", 50));
     $reforma->adicionaItem(new Item("CANETA", 10));
     $CalculadorDeImposto = new CalculadorDeImposto;
-    echo $CalculadorDeImposto->calcula($reforma, new IKCV());
+    echo $CalculadorDeImposto->calcula($reforma, new ICMS(new ISS()));
 ?>

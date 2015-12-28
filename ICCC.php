@@ -1,5 +1,5 @@
 <?php
-	 class ICCC implements Imposto {
+	 class ICCC extends Imposto {
         public function calcula(Orcamento $orcamento) {
           if($orcamento->getValor() < 1000) {
             return $orcamento->getValor() * 0.05;

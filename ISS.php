@@ -1,6 +1,9 @@
 <?php
-	class ISS implements Imposto {
-	          public function calcula(Orcamento $orcamento) {
-	              return $orcamento->getValor() * 0.06;
+	class ISS extends Imposto {
+				function __construct(Imposto $outroImposto = null){
+					parent::__construct($outroImposto);
+				}
+	            public function calcula(Orcamento $Orcamento) {
+	              return $Orcamento->getValor() * 0.06 + $this->calculaOutroImposto($Orcamento);
 	          }
 	      }
