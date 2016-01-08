@@ -16,4 +16,7 @@
 			$this->datadeemissao = $datadeemissao;
 			$this->observacoes = $observacoes;
 		}
+		public function getValor(){
+			return $this->valorbruto;
+		}
 	}

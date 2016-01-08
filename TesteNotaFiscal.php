@@ -5,6 +5,7 @@
 	require_once 'AcoesAoGerarNota.php';
 	require_once 'EnviaNFPorEmail.php';
 	require_once 'NotaFiscalDAO.php';
+	require_once 'Multiplicador.php';
 
 	date_default_timezone_set('America/Sao_Paulo');
 	$geraNotaFiscal = new NotaFiscalBuilder();
@@ -15,6 +16,7 @@
 	$geraNotaFiscal->comObservacoes("Todos Novos");
 	$geraNotaFiscal->addAcao(new NotaFiscalDAO());
 	$geraNotaFiscal->addAcao(new EnviaNFPorEmail());
+	$geraNotaFiscal->addAcao(new Multiplicador(5));
 	$nf = $geraNotaFiscal->build();
 	var_dump($nf);
 ?>
