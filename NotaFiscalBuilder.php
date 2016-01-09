@@ -7,19 +7,15 @@
 		private $impostos; 
 		private $datadeemissao;
 		private $observacoes;
-		private $acoes; 
+		private $acoes;
 
-		function __construct(){
+		function __construct($acoes){
 			$this->itens = array();
 			$this->valorbruto = 0;
 			$this->impostos = 0;
 			$this->datadeemissao = date('Y-m-d H:i:s');
-			$this->acoes = array();
+			$this->acoes = $acoes;
 		}
-		public function addAcao(AcoesAoGerarNota $acao){
-			array_push($this->acoes, $acao);
-		}
-
 		public function comRazaoSocial($razaosocial){
 			$this->$razaosocial = $razaosocial;
 		}
